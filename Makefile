@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS	= `pkg-config --cflags gtk+-3.0`
 LIBS	= `pkg-config --libs gtk+-3.0`
 
-ARTIFACT = example-0 example-1 example-2 example-3 example-3-1
+ARTIFACT = example-0 example-1 example-2 example-3 example-3-1 example-3-2
 
 all: $(ARTIFACT)
 
@@ -25,4 +25,8 @@ example-3: example-3.c
 
 example-3-1: example-3-1.c
 	gcc $(CFLAGS) -o work/$@ $< $(LIBS)        
+	cp builder.ui work/builder.ui
+
+example-3-2: example-3-2.c
+	gcc $(CFLAGS) -o work/$@ $< $(LIBS) 
 	cp builder.ui work/builder.ui
