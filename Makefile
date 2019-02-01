@@ -8,7 +8,7 @@ ARTIFACT = example-0
 all: $(ARTIFACT)
 
 clean:
-	rm -f *.o $(ARTIFACT)
+	rm -f *.o $(ARTIFACT) work/*
 
 example-0: example-0.c
-	gcc $(CFLAGS) -o $@ $< $(LIBS)
+	gcc $(CFLAGS) -o work/$@ $< $(LIBS)
